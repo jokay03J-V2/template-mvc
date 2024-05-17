@@ -1,0 +1,33 @@
+# Requete SQL
+
+## creer BDD :
+
+```SQL
+CREATE DATABASE ProjectList;
+
+USE ProjectList;
+```
+
+## creer table :
+
+```SQL
+CREATE TABLE User (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE List (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    user_id INT UNSIGNED NOT NULL
+
+)ENGINE=InnoDB;
+
+CREATE TABLE Task (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    list_id INT UNSIGNED NOT NULL,
+    `checkTask` varchar(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+)ENGINE=InnoDB;
+```
